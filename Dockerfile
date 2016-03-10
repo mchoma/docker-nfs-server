@@ -1,6 +1,9 @@
-FROM docker.io/jsafrane/nfsexporter
-MAINTAINER aos-qe@redhat.com
-RUN mkdir -p /mnt/data
-RUN chown -R nfsnobody:nfsnobody /mnt/data
-RUN chmod 777 /mnt/data
-ENTRYPOINT ["/usr/local/bin/run_nfs", "/mnt/data"]
+FROM fedora:21
+MAINTAINER Jan Safranek <jsafrane@redhat.com>
+EXPOSE 2049/tcp
+
+RUN yum -y install nfs-utils nc
+RUN yum clean all
+ADD run_nfs /usr/local/bin/run_nfs
+
+ENTRYPOINT ["/usr/local/bin/run_nfs"]
