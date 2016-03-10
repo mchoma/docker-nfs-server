@@ -1,4 +1,4 @@
-FROM jsafrane/nfsexporter
+FROM docker.io/jsafrane/nfsexporter
 MAINTAINER aos-qe@redhat.com
 RUN mkdir -p /mnt/data
 RUN chown -R nfsnobody:nfsnobody /mnt/data
