@@ -1,5 +1,5 @@
-FROM fedora:21
-MAINTAINER Jan Safranek <jsafrane@redhat.com>
+FROM fedora:30
+MAINTAINER Richard Janík <rjanik@redhat.com>
 EXPOSE 2049/tcp
 
 RUN yum -y install nfs-utils nc
