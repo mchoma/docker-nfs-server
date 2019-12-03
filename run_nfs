@@ -72,4 +72,4 @@ start "$@"
 #while true; do
 #    read
 #done
-nc -l 0.0.0.0:3000
+nc -l 0.0.0.0 3000
